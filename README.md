@@ -7,7 +7,7 @@ Con una pantalla OLED y un par de pantallas con:
 - Temperatura
 - Humedad
 - Presion
-- Altitud
+- Altitud (relativa Buenos Aires con respecto a la presón atmosférica)
 - Creditos
 
 Se van ciclando las pantallas con un pulsador (con control anti rebote simple)
