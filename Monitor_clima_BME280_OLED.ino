@@ -42,8 +42,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, OLED_D1, OLED_D0, OLED_DC,
 #define espera 60000 // 1 minuto para mostrar en el display
 #define espera_array 669000 // 11m15s minutos para guardar las ultimas 24hs en el array y distribuirlas en 128 lineas verticales
 
-// #define espera 1000 // prueba rapida para mostrar en el display
-// #define espera_array 1000 // prueba rapida para guardar las ultimas 24hs en el array
+//#define espera 1000 // prueba rapida para mostrar en el display
+//#define espera_array 1000 // prueba rapida para guardar las ultimas 24hs en el array
 
 #define espera_estado_pantalla 90000 // 1,5 minutos para el apagado del display por falta de uso
 bool estado_pantalla = true;
@@ -449,6 +449,8 @@ void clima_display_7() {
     // doble linea central
     display.drawLine(0, 41, 128, 41, BLACK);
     display.drawLine(0, 42, 128, 42, BLACK);
+    // linea indicativa de medición actual
+    display.drawLine(array_contador, 0, array_contador, 64, WHITE);
     display.display();
   } else {
     display.ssd1306_command(SSD1306_DISPLAYOFF);
@@ -470,6 +472,8 @@ void clima_display_8() {
     display.setTextColor(SSD1306_BLACK, 0);
     display.setCursor(5, 56);
     display.print("Humedad 24hs ");
+    // linea indicativa de medición actual
+    display.drawLine(array_contador, 0, array_contador, 64, WHITE);
     display.display();
   } else {
     display.ssd1306_command(SSD1306_DISPLAYOFF);
@@ -490,6 +494,8 @@ void clima_display_9() {
       presion = map(array_pressure[n], 950, 1050, 64, 1);
       display.drawLine(n, 64, n, presion, WHITE);
     }
+    // linea indicativa de medición actual
+    display.drawLine(array_contador, 0, array_contador, 64, WHITE);
     display.display();
   } else {
     display.ssd1306_command(SSD1306_DISPLAYOFF);
