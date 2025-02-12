@@ -1,5 +1,5 @@
 /*********
-  Marcelo Ferrarotti 2021
+  Teno Trash 2021
   Estación meteorológica portátil
   - Menú rotativo con el pulsador
   - Grafico de últimas 24hs de presion-humedad-temperatura, pantalla general, pantalla individual, bajo sampling del BME280 (según hoja de datos)
